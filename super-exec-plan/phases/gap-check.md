@@ -22,4 +22,4 @@ Present findings in small batches (roughly two to four at a time). Each names th
 
 ## Refine the plan
 
-Given the resolutions, update exec-plan.md. Make refinements or additions to sections where natural — typically the affected sections plus a Decision Log entry. An uncertainty that cannot be resolved before implementation goes into Assumptions & Open Questions. After updating exec-plan.md, regenerate visual-explainer.html from it so the rendering does not go stale.
+Given the resolutions, update exec-plan.md. Make refinements or additions to sections where natural — typically the affected sections plus a Decision Log entry. An uncertainty that cannot be resolved before implementation goes into Assumptions & Open Questions. After updating exec-plan.md, update visual-explainer.html when the refinement changes something it visualizes, so it does not go stale.

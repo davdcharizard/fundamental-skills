@@ -98,9 +98,10 @@ read the current draft plan and give grounded feedback to refine it further.
    assumptions and tripwires, and the recorded dismissals. Iterate
    with the user until they say the plan is done — including
    re-running any phase they ask for. On every refinement, update
-   exec-plan.md first and regenerate visual-explainer.html from it;
-   before finishing, confirm all three artifact files exist and the
-   HTML matches the final markdown.
+   exec-plan.md first, then update visual-explainer.html if the
+   refinement changes something it visualizes; before finishing,
+   confirm all three artifact files exist and the HTML is consistent
+   with the final markdown.
 
 ## Iterating and resuming
 
@@ -114,8 +115,8 @@ rounds as the user wants. Once exec-plan.md exists, in any state:
   the last pass. Do not re-raise findings already recorded in the
   plan, including dismissed ones.
 - Each re-run folds its results into exec-plan.md exactly as on the
-  first pass, and revisions regenerate visual-explainer.html once
-  it exists.
+  first pass, and revisions update visual-explainer.html (once it
+  exists) when they change something it visualizes.
 - If the skill is invoked and a draft exec-plan.md already exists
   at the destination (e.g. a later session continuing earlier
   planning), read the plan first — it is the workflow's state —
@@ -134,16 +135,21 @@ folder always ends up containing exactly these three fixed names:
 
     <folder>/
       exec-plan.md            the ExecPlan; the single source of truth
-      visual-explainer.html   prettified visual rendering of the plan
+      visual-explainer.html   visual companion to the plan's high-level design
       mental-model.md         stub now; written at implementation completion
 
 visual-explainer.html is a single self-contained HTML page that
-re-presents the ExecPlan using what HTML offers beyond markdown —
-layout, color, diagrams, timelines, collapsible sections — wherever
-visuals genuinely aid explanation and communication of the plan. It
-is a rendering, never a fork: it must not contain plan content
-absent from the markdown. Whenever exec-plan.md is refined — during
-this workflow or later during implementation — regenerate it.
+serves as a visual companion to the ExecPlan — NOT a re-presentation
+of it. It covers only the high-level parts of the design that
+genuinely benefit from visualization (architecture, data flow,
+milestone sequence, key decisions), using what HTML offers beyond
+markdown — layout, color, diagrams, timelines. It must not
+comprehensively include the written content of the plan: prose
+detail lives in exec-plan.md alone, and the page should stay small.
+It is an accompaniment, never a fork: it must not contain plan
+content absent from the markdown. Whenever exec-plan.md is refined —
+during this workflow or later during implementation — update it if
+the refinement changes something it visualizes.
 
 mental-model.md at planning time is only a stub stating its purpose.
 Its real content, written by the implementing agent at completion,
@@ -154,8 +160,9 @@ behind what exists, which the codebase alone cannot convey.
 
 Every ExecPlan this workflow produces MUST therefore include a final
 milestone, gating completion, that requires the implementer to
-(a) write mental-model.md as described above and (b) regenerate
-visual-explainer.html from the finished exec-plan.md.
+(a) write mental-model.md as described above and (b) update
+visual-explainer.html so it is consistent with the finished
+exec-plan.md.
 
 ## Assumptions & Open Questions (the unknowns ledger)
 
@@ -240,7 +247,7 @@ Milestones are narrative, not bureaucracy. If you break the work into milestones
 
 Each milestone must be independently verifiable and incrementally implement the overall goal of the execution plan.
 
-Every plan's final milestone, gating completion, must additionally require the implementer to (a) write `mental-model.md` — the high-level design reasoning and architecture of the system as actually built, after all deviations and discoveries are settled, per "Output artifacts" above — and (b) regenerate `visual-explainer.html` from the finished `exec-plan.md` so the rendering matches the final plan. No plan may be declared complete before both are done.
+Every plan's final milestone, gating completion, must additionally require the implementer to (a) write `mental-model.md` — the high-level design reasoning and architecture of the system as actually built, after all deviations and discoveries are settled, per "Output artifacts" above — and (b) update `visual-explainer.html` so the visual companion is consistent with the finished `exec-plan.md`. No plan may be declared complete before both are done.
 
 ## Living plans and design decisions
 

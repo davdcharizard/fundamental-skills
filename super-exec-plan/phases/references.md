@@ -16,4 +16,4 @@ Present each digest for confirmation or correction. A digest enters the plan onl
 
 ## Refine the plan
 
-Embed each confirmed digest into exec-plan.md in your own words — never as a bare pointer; the plan must stand without access to the reference. After updating exec-plan.md, regenerate visual-explainer.html from it so the rendering does not go stale.
+Embed each confirmed digest into exec-plan.md in your own words — never as a bare pointer; the plan must stand without access to the reference. After updating exec-plan.md, update visual-explainer.html when the refinement changes something it visualizes, so it does not go stale.

@@ -16,4 +16,4 @@ Watch for the user struggling to articulate an answer — hedging, describing ar
 
 ## Refine the plan
 
-After all questions have been answered, refine the exec-plan.md based on the new information obtained. Update the sections so an implementing agent will not make the wrong assumption against the user's desires. After updating exec-plan.md, regenerate visual-explainer.html from it (if it exists yet) so the rendering does not go stale.
+After all questions have been answered, refine the exec-plan.md based on the new information obtained. Update the sections so an implementing agent will not make the wrong assumption against the user's desires. After updating exec-plan.md, update visual-explainer.html (if it exists yet) when the refinement changes something it visualizes, so it does not go stale.

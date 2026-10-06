@@ -27,4 +27,4 @@ For each blind spot, collect the user's verdict via AskUserQuestion: "Important 
 
 ## Refine the plan
 
-Given the discussion on the blind spots update the exec-plan.md. Make refinements or additions to sections where natural e.g. typically a Decision Log entry plus updates to whichever sections it changes (milestones, plan of work, validation, ...). One that is understood but cannot be resolved yet goes into Assumptions & Open Questions. After updating exec-plan.md, regenerate visual-explainer.html from it (if it exists yet) so the rendering does not go stale.
+Given the discussion on the blind spots update the exec-plan.md. Make refinements or additions to sections where natural e.g. typically a Decision Log entry plus updates to whichever sections it changes (milestones, plan of work, validation, ...). One that is understood but cannot be resolved yet goes into Assumptions & Open Questions. After updating exec-plan.md, update visual-explainer.html (if it exists yet) when the refinement changes something it visualizes, so it does not go stale.
