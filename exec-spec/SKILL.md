@@ -67,31 +67,31 @@ Keep the ExecSpec concise enough for a PM to review and edit. Prefer a small num
 
     ## Purpose / Big Picture
 
-    Explain in a few sentences why the feature matters, the user or product problem it solves, and the outcome it should create. Keep this section high level and easy for a PM to verify.
+    Explain in a few sentences what the feature is, why it matters, what problem it solves, and what the final outcome looks like. Keep this section high level and easy for a PM to verify.
 
     ## Feature Requirements
 
-    State the current non-negotiable product requirements and constraints. Focus on user-visible behavior, core mechanism requirements, and the principles for resolving meaningful tradeoffs. Distinguish required outcomes from illustrative implementation ideas. Anything not constrained here or in an explicit later section remains flexible.
+    State the current non-negotiable product feature requirements and constraints. Organize in a top down structure where the important high level requirements and constraints come before low level ones. Organize related requirements together to make them easy to review and follow conceptually.
 
-    Organize related requirements together and explain the motivation when it is necessary to interpret the requirement correctly. Do not include project tasks, implementation sequence, or incidental details of the current code.
+    Explain the motivation when it is necessary to interpret the requirement correctly. Do not include implementation process or incidental details of the current code.
 
     ## User Stories / Examples
 
-    Give a small set of end-to-end stories that collectively cover the main feature behavior. Then add only the edge cases that reveal non-obvious constraints or meaningfully stress the robustness of the feature.
+    When appropriate, add a small set of end-to-end stories that collectively cover the main feature behavior. Then add stories that specifically target edge cases that reveal non-obvious constraints or meaningfully stress the robustness of the feature.
 
-    For each story, identify the user's situation and intent, the action or event, and the observable result. Use concrete examples to disambiguate requirements, not to prescribe an implementation or repeat every requirement in narrative form.
+    Use concrete examples to disambiguate requirements. Avoid repeating every requirement in narrative form, it should be only a few stories to cover as much surface area as possible narratively.
 
-    ## Context & Orientation
+    ## Background Context
 
-    List the source documents, meeting notes, session records, plans, code locations, or other artifacts worth consulting. For each source, provide its link or repository-relative path and one concise description of the specific content it is useful for. Do not summarize the whole source.
+    Optional - concisely describe any important and relevant background context for the product feature design. If there are important sources that helped in the process with understanding the feature reasoning or design, provide links with short concise description of what content in the link is useful. Do not summarize the links as users can read them when needed.
 
-    References in this section supplement the ExecSpec; they must not substitute for important requirements, constraints, or decisions. Carry all normative product information into the relevant self-contained section above or below.
+    References in this section supplement the ExecSpec; they must not substitute for important requirements, constraints, or decisions.
 
     ## Implementation Decisions
 
-    Record only implementation decisions that were made explicitly and that constrain how the feature must be realized. These decisions usually emerge during prototyping or implementation and are more specific than the initial feature requirements, but they still represent intentional product or mechanism choices rather than incidental code structure.
+    Record only implementation decisions that were made explicitly and that constrain how the feature must be realized. These decisions usually emerge during prototyping or implementation and usually are more low level, but they ensure that the final implementation is robust. Make sure if possible to document **why** an implementation decision is made.
 
-    Organize decisions by product or technical area from high level to low level. For each decision, state the chosen approach, why it was chosen, and the constraint it places on future implementations. Omit choices that can be changed without affecting the specified behavior. Do not promote an inferred choice into this section without signoff.
+    Organize decisions in relevant areas / groups and again within groups it should be organized hierarchically from high level to low level.
 
     ## Decision History
 
@@ -103,7 +103,7 @@ Keep the ExecSpec concise enough for a PM to review and edit. Prefer a small num
 
     Define the schemas and contracts that any implementation of the feature must preserve. Include a contract only when the team explicitly shaped it. State clearly why the contract was designed this way (e.g. prioritized simplicity in the contract design so LLMs can better use it), and the intended consumers i.e. what relies on it.
 
-    Provide enough exact detail to prevent incompatible implementations, using concise field definitions, signatures, or examples where needed. Do not freeze an interface merely because it exists in the current code. If reliance is only implicit or the reason for preserving it is unclear, surface to the user for confirmation.
+    Provide enough exact detail to replicate the contract and prevent incompatible implementations, using concise field definitions, signatures, or examples where needed. Do not describe a schema or contract here merely because it exists in the current code, it should be EXPLICITLY designed. If reliance is only implicit or the reason for preserving it is unclear, surface to the user for confirmation.
 
 If you follow the guidance above an infra engineer or an agent -- can read your ExecSpec from top to bottom and using its own desired approach / available resources / knowledge, produce a working product feature that aligns with all the specified product constraints and requirements. That is the bar: SELF-CONTAINED, SELF-SUFFICIENT, TOP-TO-BOTTOM, CONSTRAINT AND REQUIREMENT FOCUSED.
 
